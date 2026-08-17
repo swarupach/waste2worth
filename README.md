@@ -2,6 +2,9 @@
 
 Waste2Worth is a smart waste management web application that helps users identify waste, understand how to dispose of it correctly, find recycling centers, request waste pickup, and report waste-related issues.
 
+##DEMO
+  https://drive.google.com/file/d/1cLldGh10_JYGoAszVVwyJn0wAklx53Rr/view?usp=sharing
+
 ## Features
 
 - User Login and Registration
