@@ -1,0 +1,61 @@
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Figtree:wght@400;500;600;700&display=swap');
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+    margin: 0;
+    font-family: 'Figtree', -apple-system, BlinkMacSystemFont, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    background-color: #F4FBF6;
+}
+
+h1, h2, h3, h4, .font-head {
+    font-family: 'Manrope', sans-serif;
+}
+
+@layer base {
+    :root {
+        --background: 140 40% 98%;
+        --foreground: 160 30% 12%;
+        --card: 0 0% 100%;
+        --card-foreground: 160 30% 12%;
+        --popover: 0 0% 100%;
+        --popover-foreground: 160 30% 12%;
+        --primary: 160 84% 39%;
+        --primary-foreground: 0 0% 100%;
+        --secondary: 152 60% 94%;
+        --secondary-foreground: 160 40% 20%;
+        --muted: 150 30% 96%;
+        --muted-foreground: 155 12% 45%;
+        --accent: 84 81% 44%;
+        --accent-foreground: 0 0% 100%;
+        --destructive: 0 84% 60%;
+        --destructive-foreground: 0 0% 98%;
+        --border: 150 20% 90%;
+        --input: 150 20% 90%;
+        --ring: 160 84% 39%;
+        --radius: 1rem;
+    }
+}
+
+@layer base {
+    * { @apply border-border; }
+    body { @apply bg-background text-foreground; }
+}
+
+.eco-scanline {
+    position: absolute;
+    left: 0; right: 0;
+    height: 3px;
+    background: linear-gradient(90deg, transparent, #10B981, transparent);
+    box-shadow: 0 0 12px 2px rgba(16,185,129,0.6);
+    animation: scanmove 1.8s ease-in-out infinite;
+}
+@keyframes scanmove {
+    0% { top: 4%; } 50% { top: 92%; } 100% { top: 4%; }
+}
+
+.hide-scrollbar::-webkit-scrollbar { display: none; }
+.hide-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }

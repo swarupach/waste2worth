@@ -1,0 +1,142 @@
+{
+  "theme": "Light theme only (User explicitly requested 'No dark/deep backgrounds')",
+  "typography": {
+    "headings": {
+      "font_family": "Manrope, sans-serif",
+      "weights": "font-bold (700), font-extrabold (800)",
+      "usage": "Use for all H1-H4. It provides a clean, approachable, organic tech feel suitable for a sustainability app.",
+      "tracking": "tracking-tight for H1-H2 to look premium"
+    },
+    "body": {
+      "font_family": "Figtree, sans-serif",
+      "weights": "font-normal (400), font-medium (500)",
+      "usage": "Use for all body text, buttons, and inputs. Very readable, geometric, yet friendly."
+    },
+    "scales": {
+      "h1": "text-4xl sm:text-5xl lg:text-6xl tracking-tighter leading-tight",
+      "h2": "text-2xl sm:text-3xl lg:text-4xl tracking-tight leading-snug",
+      "h3": "text-xl sm:text-2xl font-bold",
+      "h4": "text-lg sm:text-xl font-bold",
+      "body": "text-base leading-relaxed text-gray-600",
+      "small": "text-sm text-gray-500",
+      "overline": "text-xs font-bold uppercase tracking-[0.2em] text-emerald-600"
+    }
+  },
+  "colors": {
+    "archetype": "ORGANIC & EARTHY",
+    "primary": {
+      "light": "#D1FAE5",
+      "DEFAULT": "#10B981",
+      "dark": "#047857",
+      "tailwind": "emerald"
+    },
+    "accent": {
+      "mint": "#A7F3D0",
+      "leaf": "#84CC16",
+      "tailwind": "lime"
+    },
+    "waste_categories": {
+      "biodegradable": "#8B5CF6",
+      "recyclable": "#3B82F6",
+      "hazardous": "#EF4444"
+    },
+    "background": {
+      "main": "#F9FAFB",
+      "card": "#FFFFFF"
+    },
+    "text": {
+      "primary": "#111827",
+      "secondary": "#4B5563"
+    },
+    "rules": [
+      "NO pure black. Text should be gray-900 or gray-800.",
+      "NO dark/deep backgrounds globally. Stick to light, fresh, airy palettes.",
+      "Use Mint/Emerald for main accents. Use waste category colors strictly for tagging chips/badges."
+    ]
+  },
+  "layouts": {
+    "app_structure": {
+      "user_app": "Mobile-first view. On desktop, constrain the main app view to a max-width (e.g., max-w-md mx-auto) with a soft shadow to simulate a mobile app frame, or allow responsive grid expansion while keeping the bottom nav fixed for mobile.",
+      "admin_dashboard": "Standard 100vw layout. Sidebar on desktop (w-64), top header, and bento grid for main content area. Fully responsive."
+    },
+    "hero_page": "Full-screen beautiful environmental hero background. Use bg-cover bg-center with a subtle white/mint gradient overlay bg-gradient-to-t from-white/90 via-white/40 to-transparent so text is readable but image breathes.",
+    "navigation": {
+      "user_mobile": "Fixed bottom navigation bar. fixed bottom-0 w-full bg-white/80 backdrop-blur-xl border-t border-gray-100 z-50 pb-safe.",
+      "admin": "Left sidebar on desktop, hamburger off-canvas drawer on mobile."
+    },
+    "spacing": "Generous spacing. Use p-6 to p-8 inside cards. Avoid cramped information."
+  },
+  "grids": {
+    "admin_bento": "grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-6. Dashboard stat cards span 1 column. Charts span 2-3 columns.",
+    "user_cards": "grid-cols-1 sm:grid-cols-2 gap-4 for recycling centers or waste logs."
+  },
+  "component_guidelines": {
+    "cards": "Clean, bg-white, rounded-3xl for user app, rounded-2xl for admin. shadow-[0_8px_30px_rgb(0,0,0,0.04)] or shadow-sm. Soft and modern.",
+    "buttons": "Pill-shaped rounded-full for consumer app actions to feel friendly. rounded-lg for admin actions. Must have hover states: hover:-translate-y-0.5 transition-transform.",
+    "bottom_nav_items": "Flex column, centered. Active state: text-emerald-600 with an emerald dot or underline. Inactive: text-gray-400.",
+    "status_chips": "rounded-full px-3 py-1 text-xs font-semibold. Use soft backgrounds (bg-blue-100 text-blue-700 for Recyclable, etc.).",
+    "smart_bins": "Simulate fill levels using vertical or horizontal progress bars with colors changing based on level (Green < 50%, Yellow > 50%, Red > 90%). Add explicit text 'Simulated IoT Data'."
+  },
+  "visual_enhancers": {
+    "shadows": "Ambient and soft. Avoid harsh, tight shadows. Use shadow-[0_20px_40px_-15px_rgba(0,0,0,0.05)] for floating elements.",
+    "borders": "Use very subtle borders border border-gray-100 alongside soft shadows to define edges clearly.",
+    "glassmorphism": "Use ONLY for sticky headers or bottom navigation: bg-white/70 backdrop-blur-xl border-b/t border-white/20. Never use transparent without blur."
+  },
+  "motion": {
+    "rules": "Subtle animations only.",
+    "hover": "Buttons and cards lift slightly: hover:-translate-y-1 transition-transform duration-300 ease-out.",
+    "page_transitions": "Fade in animate-in fade-in slide-in-from-bottom-4 duration-500 for main sections.",
+    "scan_animation": "When 'Scanning Waste', use a smooth sweeping line over the image animate-pulse and translate-y."
+  },
+  "media": {
+    "icons": "Use lucide-react. Stroke width 1.5 or 2 for a clean, modern look. Keep them simple.",
+    "images": "Use border-radius rounded-2xl for inline images. Ensure alt tags are descriptive.",
+    "image_urls": {
+      "hero_background": {
+        "url": "https://images.unsplash.com/photo-1507041957456-9c397ce39c97?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NTY2Njd8MHwxfHNlYXJjaHwxfHxiZWF1dGlmdWwlMjBsdXNoJTIwZm9yZXN0JTIwYmFja2dyb3VuZHxlbnwwfHx8fDE3ODY1OTY5NTl8MA&ixlib=rb-4.1.0&q=85",
+        "description": "Lush forest background for the beautiful environmental hero page."
+      },
+      "waste_scan_placeholder": {
+        "url": "https://images.unsplash.com/photo-1611284446314-60a58ac0deb9?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NjA1MDZ8MHwxfHNlYXJjaHwyfHxyZWN5Y2xpbmclMjBzb3J0aW5nJTIwYmlucyUyMGNsZWFufGVufDB8fHx8MTc4NjU5Njk1OXww&ixlib=rb-4.1.0&q=85",
+        "description": "Recycling bins for disposal assistant or scan placeholders."
+      },
+      "impact_card": {
+        "url": "https://images.unsplash.com/photo-1542601906990-b4d3fb778b09?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NTYxOTJ8MHwxfHNlYXJjaHwxfHxob2xkaW5nJTIwcGxhbnQlMjBzcHJvdXQlMjBuYXR1cmV8ZW58MHx8fHwxNzg2NTk2OTU5fDA&ixlib=rb-4.1.0&q=85",
+        "description": "Hands holding a sprout, for Impact dashboard or EcoPoints."
+      },
+      "community_park": {
+        "url": "https://images.unsplash.com/photo-1684071358868-774b74ff248c?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NjY2NzN8MHwxfHNlYXJjaHwxfHxjbGVhbiUyMG1vZGVybiUyMGNpdHklMjBwYXJrJTIwbmF0dXJlfGVufDB8fHx8MTc4NjU5Njk1OXww&ixlib=rb-4.1.0&q=85",
+        "description": "Clean modern city park for the community reports section."
+      }
+    }
+  },
+  "accessibility": {
+    "contrast": "Ensure white text has a dark overlay if placed over images. Use APCA contrast. Buttons must have at least 3:1 ratio.",
+    "focus": "All inputs and buttons must have focus:ring-2 focus:ring-emerald-500 focus:outline-none.",
+    "testing": "All interactive elements MUST have a data-testid attribute (e.g., data-testid='scan-button')."
+  },
+  "3d_libraries": "Not recommended for this specific project as user requested 'Subtle animations only' and a fast, modern mobile app feel. Rely on crisp 2D CSS visuals, smooth transitions, and high-quality photography instead.",
+  "instructions_to_main_agent": [
+    "Install Google Fonts 'Manrope' and 'Figtree' in your index.html or import in CSS.",
+    "Do NOT use 'Inter' for headings. Use Manrope.",
+    "For the user-facing mobile app views, use a layout that looks good on desktop but clearly mimics a mobile interface (e.g., max-w-md centered container for the app routes, or responsive grid that relies on bottom navigation for mobile and side nav for desktop).",
+    "Admin dashboard must be a separate route space (e.g., /admin) using a full 100vw layout.",
+    "Use Shadcn UI components but heavily customize them. NOTE: The project uses .js/.jsx, NOT .tsx. Install and configure Shadcn without TypeScript.",
+    "Do not build HTML datepickers or selects. Use Shadcn components for forms.",
+    "Add 'data-testid' to ALL buttons, links, and forms."
+  ],
+  "UNIVERSAL GUIDELINES FOR MAIN AGENT": [
+    "You tend to converge toward generic, 'on distribution' outputs. Make creative, distinctive frontends that surprise and delight.",
+    "NEVER use generic centered layouts for text reading. Left-align most content for better scanability.",
+    "Use 2-3x more spacing than feels comfortable. Cramped designs look cheap.",
+    "Every interaction needs micro-animations - hover states, transitions, entrance animations. Static = dead.",
+    "NEVER use AI assistant Emoji characters like robot, brain, lightbulb, dart etc for icons. Use lucide-react.",
+    "DO NOT use dark colors as gradients. User explicitly forbade dark/deep backgrounds.",
+    "Use glass-morphism effects with backdrop filters for floating navs (12-24px blur).",
+    "Always add transitions for specific interactive elements like button, input EXCLUDING transforms to avoid breaking.",
+    "You MUST NOT center align the app container, ie do not add .App { text-align: center; }.",
+    "Always use modern button styles like pill-shaped with interaction animations & color relevant to the app style.",
+    "DO NOT use complete 'transparent' background in header or overlays. Ensure they are semi-solid or glass.",
+    "Use Sonner for toast notifications."
+  ]
+}

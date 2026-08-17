@@ -1,0 +1,24 @@
+{
+  "summary": "Full backend + frontend verification of the 3 NEW features and regressions. Backend: added tests for default address (seeded Home=default, Hostel=false; PUT switches default with exactly one at a time; 404 on unknown user) and center favourites (GET returns list; POST toggles add/remove; 404 on unknown user). Frontend: verified Impact scan-history filter chips correctly filter by category (Recyclable=13, Biodegradable=6, Hazardous=8, All=27); every rendered chip matches the active filter. Pickup: address input is pre-filled with the default (Home) address on load; exactly one 'Default' badge visible in saved-addresses; clicking a non-default star switches default and moves the badge (toast fires). Disposal: clicking center-fav-<id> stars a center with toast, favourited card moves to TOP; state persists after navigating away and back; clicking again unstars. Regressions: user login (Continue as User), admin route redirect for user (/admin -> /app), live Gemini scan still returns source and +10 points, saved-address save-for-later + Nearest/Any sort toggle still functional. Seed state restored: default reset to Home, favourites emptied. 19/19 pytest pass.",
+  "backend_issues": {"critical": [], "minor": []},
+  "frontend_issues": {"ui_bugs": [], "integration_issues": [], "design_issues": []},
+  "test_report_links": [
+    "/app/backend/tests/backend_test.py",
+    "/app/test_reports/pytest/pytest_results.xml"
+  ],
+  "action_items": [],
+  "critical_code_review_comments": [
+    "server.py add_address / del_address still do not validate user existence (no 404 on unknown user_id) — set_default_address and toggle_favourite do, so behavior is inconsistent. Consider validating in add/del too.",
+    "server.py stores plaintext passwords (demo only, acceptable).",
+    "Pickup.jsx prefill uses a `prefilled` state flag so that if the user clears the address it won't be re-populated on the next loadAddresses call — good. However, if the user changes the default from within this page, the address input is NOT auto-updated to the new default (only saved-addresses list reflects it). Minor UX nit; current spec doesn't require it.",
+    "Disposal.jsx sort chain double-sorts (nearest, then favourites-to-top). Works, but a single comparator combining `_fav` then `_d` would be more efficient and stable."
+  ],
+  "updated_files": ["/app/backend/tests/backend_test.py"],
+  "success_rate": {"backend": "100% (19/19)", "frontend": "100% (all assertions passed)"},
+  "test_credentials": "user@ecosort.demo / user123 (id user-demo-0001); admin@ecosort.demo / admin123",
+  "seed_data_creation": "None. Test toggles default address and favourites but resets to original state (Home=default, favourites=[]) at end.",
+  "retest_needed": false,
+  "should_main_agent_self_test": false,
+  "context_for_next_testing_agent": "Pytest suite at /app/backend/tests/backend_test.py now includes default-address and favourites toggle tests (test_default_address_seeded, test_set_default_address_switch, test_set_default_unknown_user_404, test_favourites_toggle, test_favourites_unknown_user_404, test_get_favourites_returns_list). Bottle image cached at /tmp/bottle_b64.txt for Gemini scan test. Frontend testid conventions: scan-filter-<Category>, scan-history-list, scan-item-<id>, set-default-<addrId>, center-fav-<centerId>, center-card-<centerId>. Demo user's ecopoints have grown from 340 (seed) to ~595 due to repeated scan tests — do not assert absolute values, only deltas.",
+  "rca of the issue": "N/A — no defects observed."
+}
