@@ -46,8 +46,10 @@ Start the backend:
 
 uvicorn server:app --host 0.0.0.0 --port 8001 --reload
 
+```
 2. Start the Frontend
 
+```
 Open a new terminal:
 
 cd frontend
